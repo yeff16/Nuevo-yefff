@@ -16,6 +16,7 @@
     <nav>
         <ul>
             <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#precios">Precios</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#contacto">Contacto</a></li>
@@ -75,6 +76,67 @@
             </div>
         </section>
         
+        <!-- Nueva sección de precios dinámicos -->
+        <section id="precios" class="pricing-section">
+            <h2>Nuestros Precios</h2>
+            <div class="pricing-info">
+                <p>Los precios varían según el horario del servicio:</p>
+                <div class="time-slots">
+                    <div class="time-slot">
+                        <h3><i class="fas fa-sun"></i> Horario Diurno</h3>
+                        <p>8:00 am - 6:00 pm</p>
+                        <div class="price">$50 - $120</div>
+                        <p class="note">Precio base por hora</p>
+                    </div>
+                    <div class="time-slot highlight">
+                        <h3><i class="fas fa-moon"></i> Horario Nocturno</h3>
+                        <p>6:00 pm - 8:00 am</p>
+                        <div class="price">$70 - $150</div>
+                        <p class="note">Incluye recargo nocturno</p>
+                    </div>
+                    <div class="time-slot">
+                        <h3><i class="fas fa-calendar-weekend"></i> Fines de Semana</h3>
+                        <p>Sábados y Domingos</p>
+                        <div class="price">$60 - $140</div>
+                        <p class="note">Precio especial</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-request">
+                <h3>Solicitud de Servicio</h3>
+                <form id="serviceForm" class="service-form">
+                    <div class="form-group">
+                        <label for="service-type">Tipo de Servicio:</label>
+                        <select id="service-type" required>
+                            <option value="">Seleccione...</option>
+                            <option value="residencial">Limpieza Residencial</option>
+                            <option value="corporativa">Limpieza Corporativa</option>
+                            <option value="profunda">Limpieza Profunda</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-date">Fecha:</label>
+                        <input type="date" id="service-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-time">Hora:</label>
+                        <input type="time" id="service-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-hours">Horas estimadas:</label>
+                        <input type="number" id="service-hours" min="1" max="8" required>
+                    </div>
+                    <button type="submit" class="btn">Calcular Precio</button>
+                </form>
+                <div id="priceResult" class="price-result hidden">
+                    <h4>Estimado:</h4>
+                    <p id="calculatedPrice"></p>
+                    <p id="timeInfo"></p>
+                    <a href="#contacto" class="btn">Confirmar Reserva</a>
+                </div>
+            </div>
+        </section>
+        
         <section id="beneficios" class="benefits-section">
             <h2>¿Por qué elegirnos?</h2>
             <div class="benefits-grid">
@@ -110,6 +172,7 @@
                 <p>Fundada en 2025, Clean & Shane nació de la pasión por crear espacios limpios que inspiren bienestar. Lo que comenzó como un pequeño equipo de limpieza ahora es una empresa líder en el sector, reconocida por su atención al detalle y servicio personalizado.</p>
                 <p>Nuestros valores se basan en la honestidad, responsabilidad y búsqueda constante de la excelencia. Cada cliente recibe el mismo trato cuidadoso, ya sea una pequeña vivienda o un gran corporativo.</p>
             </div>
+        </section>
     </main>
     
     <section id="contacto" class="contact-section">
@@ -118,12 +181,13 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Información de contacto</h3>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> info@cleanandshane.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Limpia 123, Ciudad Impecable</p>
                     
                     <h3>Horario de atención</h3>
-                    <p>Lunes a Viernes: 8:00 am - 6:00 pm</p>
-                    <p>Sábados: 9:00 am - 2:00 pm</p>
-        
-                    </div>
+                    <p><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 am - 6:00 pm</p>
+                    <p><i class="fas fa-clock"></i> Sábados: 9:00 am - 2:00 pm</p>
                 </div>
                 
                 <div class="contact-form">
@@ -134,6 +198,12 @@
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn">Enviar</button>
                     </form>
@@ -150,10 +220,31 @@
                     <p>Limpieza profesional con estándares de excelencia.</p>
                 </div>
                 
+                <div class="footer-links">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#precios">Precios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-legal">
+                    <h3>Legal</h3>
+                    <ul>
                         <li><a href="#">Términos de servicio</a></li>
                         <li><a href="#">Política de privacidad</a></li>
                         <li><a href="#">Garantías</a></li>
                     </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
             </div>
             
@@ -162,5 +253,57 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Función para calcular el precio según el horario
+        document.getElementById('serviceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const serviceType = document.getElementById('service-type').value;
+            const serviceDate = new Date(document.getElementById('service-date').value);
+            const serviceTime = document.getElementById('service-time').value;
+            const hours = parseInt(document.getElementById('service-hours').value);
+            
+            if (!serviceType || !serviceDate || !serviceTime || !hours) {
+                alert('Por favor complete todos los campos');
+                return;
+            }
+            
+            // Extraer hora del tiempo seleccionado
+            const [hoursSelected, minutesSelected] = serviceTime.split(':').map(Number);
+            
+            // Determinar tarifa según horario que deseen
+            let baseRate;
+            let timeDescription;
+            
+            if (hoursSelected >= 18 || hoursSelected < 8) {
+                // Horario nocturno (6pm - 8am)
+                baseRate = 70;
+                timeDescription = "Horario Nocturno (tarifa aumentada)";
+            } else if (serviceDate.getDay() === 0 || serviceDate.getDay() === 6) {
+                // Fin de semana
+                baseRate = 60;
+                timeDescription = "Fin de Semana (tarifa especial)";
+            } else {
+                // Horario diurno entre semana
+                baseRate = 50;
+                timeDescription = "Horario Diurno";
+            }
+            
+            // Ajustar tarifa según el servicio que deseen
+            if (serviceType === 'corporativa') baseRate += 10;
+            if (serviceType === 'profunda') baseRate += 15;
+            
+            const totalPrice = baseRate * hours;
+            
+            // Resultado
+            document.getElementById('calculatedPrice').textContent = `$${totalPrice} (${hours} horas)`;
+            document.getElementById('timeInfo').textContent = timeDescription;
+            document.getElementById('priceResult').classList.remove('hidden');
+            
+            // Desplazar al resultado
+            document.getElementById('priceResult').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
